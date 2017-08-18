@@ -29,5 +29,4 @@ htmlcov
 *,cover
 
 flask
-
 config.py
