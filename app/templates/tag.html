@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h4>Upload files to tag</h4>
+   {% for message in form.img_tag.errors %}
+     <div class="flash">{{ message }}</div>
+   {% endfor %}
+    <form method="POST" enctype="multipart/form-data">
+	  <p> {{ form.hidden_tag() }} </p>
+	  <p> {{ form.project.label }}: {{ form.project }}</p>
+	  <p> Upload images and their tags below </p>
+	  {% for it in form.img_tag %}
+		<p> {{ it.img.label }}: {{ it.img(multiple="multiple") }}   {{ it.tag.label }}: {{ it.tag }} 
+		  {% if loop.index == (form.img_tag|length)%}
+            {{ form.new_row }}
+          {% endif%}
+		</p>		 
+	  {% endfor %}	  
+	  <p> {{ form.submit }}</p>
+	</form>
+{% endblock %}

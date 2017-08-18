@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h4>Upload file(s) for prediction</h4>
+    {% for message in form.img_field.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <form method="POST" enctype="multipart/form-data">
+	  <p> {{ form.hidden_tag() }} </p>
+	  <p> {{ form.project.label }}: {{ form.project }}</p>
+	  {% for it in form.img_field %}
+		<p> {{ it.img.label }}: {{ it.img(multiple="multiple") }}</p>		 
+	  {% endfor %}
+	  <p> {{ form.submit}} </p>
+	</form>
+{% endblock %}

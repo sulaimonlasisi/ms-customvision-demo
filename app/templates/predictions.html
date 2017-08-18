@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h4>Prediction Results</h4>
+  {% for p in prediction %}
+	<p>  Original File Name: {{ p.name }} - Predicted Class : {{ p['prediction'].Tag }} with probability: {{ p['prediction'].Probability }} </p>	 
+  {% endfor %}
+{% endblock %}

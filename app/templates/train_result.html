@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h3>Image Training Results </h3>
+	<p>Iteration Status: {{ info.Status or info['Status']}}</p>  
+	<p>Iteration Info: {{ info.Id or info['message']}}</p>  
+{% endblock %}
