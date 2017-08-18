@@ -29,5 +29,5 @@ htmlcov
 *,cover
 
 flask
-
 config.py
+__pycache__
